@@ -76,10 +76,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from gray-50 to-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8">
+    <div className="min-h-screen flex p-4">
+      <div className="bg-white border border-gray-300 rounded-2xl w-full max-w-lg p-8">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
-          Task Manager
+          Todo Application
         </h1>
 
         <form
@@ -91,7 +91,7 @@ function App() {
             type="text"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
-            placeholder="What needs to be done?"
+            placeholder="Enter task to add"
             required
           />
           <button
@@ -119,15 +119,17 @@ function App() {
                       <div className="flex gap-x-2">
                         <button
                           onClick={() => saveEdit(todo._id)}
-                          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 cursor-pointer"
+                          className="px-4 py-2 text-green-700 font-bold rounded-lg hover:bg-green-600 hover:text-white cursor-pointer border border-green-500 "
                         >
-                          <MdOutlineDone />
+                          {/* <MdOutlineDone /> */}
+                          Save
                         </button>
                         <button
-                          className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 cursor-pointer"
+                          className="px-4 py-2 font-bold text-orange-600 text-gray-700 rounded-lg hover:bg-orange-500 hover:text-white cursor-pointer border border-orange-500"
                           onClick={() => setEditingTodo(null)}
                         >
-                          <IoClose />
+                          {/* <IoClose /> */}
+                          Cancel
                         </button>
                       </div>
                     </div>
@@ -151,16 +153,16 @@ function App() {
                         </div>
                         <div className="flex gap-x-2">
                           <button
-                            className="p-2 text-blue-500 hover:text-blue-700 rounded-lg hover:bg-blue-50 duration-200"
+                            className="p-2 font-bold text-blue-500 hover:text-blue-700 rounded-lg hover:bg-blue-50 duration-200 border border-blue-500"
                             onClick={() => startEditing(todo)}
                           >
-                            <MdModeEditOutline />
+                            Edit
                           </button>
                           <button
                             onClick={() => deleteTodo(todo._id)}
-                            className="p-2 text-red-500 hover:text-red-700 rounded-lg hover:bg-red-50 duration-200"
+                            className="p-2 font-bold text-red-500 hover:text-red-700 rounded-lg hover:bg-red-50 duration-200 border border-red"
                           >
-                            <FaTrash />
+                            Delete
                           </button>
                         </div>
                       </div>
